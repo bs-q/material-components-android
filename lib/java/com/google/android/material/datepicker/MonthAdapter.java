@@ -184,6 +184,13 @@ class MonthAdapter extends BaseAdapter {
       style = calendarStyle.invalidDay;
     }
     style.styleItem(day);
+    style.styleItem(day);
+    if (isSelected(date)) {
+      Collection<Long> selectedDate = dateSelector.getSelectedDays();
+      if (date == selectedDate.toArray(new Long[0])[1]) {
+        day.setBackgroundColor(0xff84D2FF);
+      }
+    }
   }
 
   private boolean isSelected(long date) {
